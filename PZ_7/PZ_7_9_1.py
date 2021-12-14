@@ -10,11 +10,11 @@ while N % 2 == 1:
 C1 = input("Введите первый символ : ")
 C2 = input("Введите второй символ : ")
 
-Ctr = ()
+Ctr = ''
 
 N = N // 2
 while N > 0:
-    Ctr += C1, C2
+    Ctr += C1 + C2
     N -= 1
 
 print("Строка - ", Ctr)
