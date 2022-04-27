@@ -1,16 +1,26 @@
-# This is a sample Python script.
+#import module
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+#module.get_set()
 
+#module.get_txt()
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+#print(module.list_doc.doc)
 
+#print(module.file_doc.doc)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+#print(module.get_binary())
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+#print(dir(module))
+
+from figures import square_perimeter
+print(square_perimeter())
+from figures import square_area
+print(square_area())
+from figures import circle_perimeter
+print(circle_perimeter())
+from figures import circle_area
+print(circle_area())
+from figures import triangle_perimeter
+print(triangle_perimeter())
+from figures import triangle_area
+print(triangle_area())
