@@ -87,9 +87,9 @@ class Main(tk.Frame):
         self.db.con.commit()
         self.view_records()
 
-    def search_records(self, lekc):
-        lekc = (lekc,)
-        self.db.cur.execute("""SELECT * FROM disciplina WHERE lekc>?""", lekc)
+    def search_records(self, name_disciplin):
+        name_disciplin = ("%" + name_disciplin + "%",)
+        self.db.cur.execute("""SELECT * FROM disciplina WHERE name_disciplin LIKE ?""", name_disciplin)
         [self.tree.delete(i) for i in self.tree.get_children()]
         [self.tree.insert('', 'end', values=row) for row in self.db.cur.fetchall()]
 
@@ -192,11 +192,11 @@ class Search(tk.Toplevel):
         self.geometry("400x140+400+300")
         self.resizable(False, False)
 
-        label_search = tk.Label(self, text="Поиск дисциплин, по колличеству часов")
+        label_search = tk.Label(self, text="Поиск дисциплин, по наименованию")
         label_search.place(x=5, y=20)
 
         self.entry_search = ttk.Entry(self)
-        self.entry_search.place(x=240, y=20, width=150)
+        self.entry_search.place(x=220, y=20, width=150)
 
         btn_cancel = ttk.Button(self, text="Закрыть", command=self.destroy)
         btn_cancel.place(x=185, y=50)
